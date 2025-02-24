@@ -1,12 +1,13 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Consulta de Dados</title>
     <style>
         @font-face {
-        font-family: "mf";
-        src: url('Gameplay.ttf') format('truetype');
+            font-family: "mf";
+            src: url('Gameplay.ttf') format('truetype');
+        }
+        @font-face{
+            font-family: "pesq";
+            src: url('Android_7.ttf') format('truetype');
         }
         body {
             background: linear-gradient(to right,#ff00cc,#aa00ff);
@@ -15,9 +16,32 @@
         h1 {
             font-family: mf;
             font-size: 130px;
-            margin:100px;
+            margin: 100px;
             color: white;
-            
+        }
+        .tabela {
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            width: 650px;
+            height: 95px;
+            font-family: Monospace;
+            font-size: 50px;
+            margin: 50px;
+            background: white;
+            border: 0;
+        }
+        #pesq{
+            font-family: pesq;
+            font-size: 80px;
+            color: #ff00cc;
+            text-align: center;
         }
         .tabela {
             left: 0px;
@@ -56,15 +80,19 @@
             padding: 5px;
             white-space: normal;
         }
+
     </style>
+
 </head>
 <body>
     <div class="tabela">
         <h1>SYSTEM.32</h1>
-        <form method="GET" action="">
-            <input type="text" name="id" placeholder="Buscar por nome">
-            <input type="submit" value="Buscar">
+
+        <form method="GET" action="register.php">
+            <input type="text" name="id" /><br>
+            <input id="pesq" type="submit" value="Pesquisar" />
         </form>
+
         <?php
         // Configurações do banco de dados
         $servername = "localhost";
