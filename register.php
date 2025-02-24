@@ -61,12 +61,15 @@
 <body>
     <div class="tabela">
         <h1>SYSTEM.32</h1>
-
+        <form method="GET" action="">
+            <input type="text" name="id" placeholder="Buscar por nome">
+            <input type="submit" value="Buscar">
+        </form>
         <?php
         // Configurações do banco de dados
-        $servername = "192.168.6.102";
+        $servername = "localhost";
         $username = "root";
-        $password = "root";
+        $password = "";
         $dbname = "DADOS";
 
         // Cria a conexão
@@ -78,7 +81,7 @@
         }
 
         // Consulta no banco de dados
-        $id = $_GET["id"];
+        $id = isset($_GET["id"]) ? $_GET["id"] : '';
 
         if ($id == '') {
             $sql = "SELECT nome, cpf, telefone FROM registros";
