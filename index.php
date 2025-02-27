@@ -94,21 +94,19 @@
         </form>
 
         <?php
-        // Configurações do banco de dados
+        
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "DADOS";
 
-        // Cria a conexão
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Verifica a conexão
+        
         if ($conn->connect_error) {
             die("Conexão falhou: " . $conn->connect_error);
         }
 
-        // Consulta no banco de dados
         $id = isset($_GET["id"]) ? $_GET["id"] : '';
 
         if ($id == '') {
@@ -122,7 +120,7 @@
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            // Exibe os resultados em uma tabela
+    
             echo "<table>";
             echo "<tr><th>Nome</th><th>Cpf</th><th>Telefone</th></tr>";
 
@@ -139,7 +137,7 @@
             echo "Nenhum resultado encontrado.";
         }
 
-        // Fecha a conexão
+        
         $conn->close();
         ?>
     </div>
